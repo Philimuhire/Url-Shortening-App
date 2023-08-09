@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 1.5;
   color: #333;
   background-color: #f9f9f9;
@@ -96,24 +96,24 @@ nav div a {
   display: flex;
   align-items: center;
   padding: 50px;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: hsl(0, 6%, 13%);
   border-radius: 5px;
   gap: 20px;
 }
-.shorten-input {
+#shorten-input {
   flex: 1;
   border: none;
   outline: none;
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: 25px;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
 }
 .btn-shorten {
   background-color: #2acfcf;
   color: white;
-  font-size: 18px;
+  font-size: 25px;
   border: none;
   outline: none;
   padding: 10px 30px;
@@ -224,22 +224,15 @@ border-radius: 25px;
 cursor: pointer;
 font-family: 'Poppins', sans-serif;
 margin-top: 20px;
+font-size: 25px;
 }
 .attribution{
 margin-top: 50px;
 margin-bottom: 50px;
-font-size: 18px;
+font-size: 25px;
 }
 .attribution a{
 text-decoration: none;
-}
-
-/* ... Your existing styles ... */
-
-/* Shortened Links Section */
-.shortened-links-section {
-background-color: #f9f9f9;
-padding: 50px;
 }
 
 .shortened-links {

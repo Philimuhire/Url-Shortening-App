@@ -20,6 +20,7 @@ async function shortenUrl(url) {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
+    console.log("API Response:", data);
     return data;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -29,9 +30,11 @@ async function shortenUrl(url) {
 
 // Function to handle form submission
 function handleSubmit(event) {
+  console.log("Form submitted!");
   event.preventDefault();
-  const inputElement = document.querySelector('.shorten-input');
+  const inputElement = document.querySelector('#shorten-input');
   const originalUrl = inputElement.value.trim();
+  console.log("Original URL:", originalUrl);
 
   // Check if the input is empty
   if (!originalUrl) {
@@ -39,12 +42,14 @@ function handleSubmit(event) {
     return;
   }
 
-  // Call the shortenUrl function to fetch data from the API
+  // Call the shortenUrl function with the originalUrl as an argument
   shortenUrl(originalUrl)
     .then(data => {
+      console.log("API Response:", data);
       if (data && data.ok) {
-        // Add the shortened link to the list and save it in local storage
         const shortenedLink = data.result.full_short_link;
+        console.log("Original URL:", originalUrl);
+        console.log("Shortened Link:", shortenedLink); // Log the values
         addShortenedLink(originalUrl, shortenedLink);
       } else {
         alert('Unable to shorten URL. Please try again later.');
@@ -103,3 +108,6 @@ function loadSavedLinks() {
     addShortenedLink(link.originalUrl, link.shortenedLink);
   });
 }
+
+
+
